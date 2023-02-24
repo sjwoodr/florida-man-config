@@ -4,6 +4,7 @@ metadata:
   name: florida-man-local
   namespace: argocd
 spec:
+  project: default
   source:
     repoURL: https://github.com/sjwoodr/florida-man-config
     targetRevision: main

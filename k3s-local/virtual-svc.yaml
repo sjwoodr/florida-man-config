@@ -1,0 +1,19 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: florida-man
+spec:
+  hosts:
+    - "florida-man-int.dev.example.com"
+  gateways:
+    - istio-system/example-gateway
+  http:
+    - route:
+        - destination:
+            host: florida-man
+            port:
+              number: 80
+      match:
+        - uri:
+            prefix: /

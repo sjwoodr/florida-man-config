@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: florida-man
+spec:
+  selector:
+    matchLabels:
+      app: florida-man
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: florida-man
+    spec:
+#      serviceAccountName: florida-man
+      containers:
+      - name: florida-man
+        image: sjwoodr/florida-man
+        imagePullPolicy: Always
+#        envFrom:
+#          - secretRef:
+#              name: florida-man-sample1
+#          - secretRef:
+#              name: florida-man-sample2
+        ports:
+          - name: http
+            containerPort: 5000

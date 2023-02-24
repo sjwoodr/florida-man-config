@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: https://github.com/sjwoodr/florida-man-config
     targetRevision: main
-    path: argocd/k3s-local
+    path: k3s-local
   destination:
     name: in-cluster
     namespace: apps
